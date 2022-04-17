@@ -18,3 +18,57 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
+// the below template literal is my first attempt at building out the Readme template.  I used the README.md from a previous project as a starting point.
+/*
+
+`# PROJECT_TITLE
+
+## Purpose and Functionality
+
+DESCRIPTION_TEXT
+
+---
+
+## Key Learnings
+
+KEY_LEARNING_TEXT
+
+---
+
+## Deployed Site
+
+The deployed site is hosted on github pages at the following link:
+
+DEPLOYED_SITE_LINK
+
+---
+
+## Screenshots
+
+SCREENSHOT_DESCRIPTION
+
+![SCREENSHOT_ALT_TEXT](SCREENSHOT_PATH)
+
+---
+
+## Known Bugs
+
+BUG_LIST
+
+---
+
+## Future Improvements
+
+IMPROVEMENT_LIST
+
+---
+
+## License
+
+LICENSE_INFO
+
+---
+`;
+
+*/
