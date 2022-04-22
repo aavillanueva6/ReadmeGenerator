@@ -56,7 +56,7 @@ function generateMarkdown(data) {
   let tocLicense = '';
   if (data.projLicense !== 'none') {
     tocLicense = `
-  - [License](#License)`;
+  - [License](#license)`;
   }
   return `
   # ${data.projTitle}
@@ -72,7 +72,7 @@ function generateMarkdown(data) {
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [Tests](#tests)${tocLicense}
-  - [Questions](#Questions)
+  - [Questions](#questions)
 
 ---
   ## Installation

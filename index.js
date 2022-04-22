@@ -79,7 +79,7 @@ function init() {
     .then(function (response) {
       console.log(generateMarkdown(response));
       fs.writeFile(
-        `${response.projTitle.split(' ').join('')}-portfolio.md`,
+        `${response.projTitle.split(' ').join('')}-README.md`,
         generateMarkdown(response),
         function (err) {
           err ? console.error(err) : console.log('Success!');
