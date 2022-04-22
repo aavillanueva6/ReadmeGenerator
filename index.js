@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// pulls in required packages and utilities for this file
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+// creates an array of questions / prompts for the user
 const questions = [
   'What is the title of your project?',
   'Please provide a brief description of the project.',
@@ -16,10 +16,20 @@ const questions = [
   'If you would like other developers to reach out to you, please enter your email address.',
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+/**
+ * function takes results from init function to use the file system package to create an md file with the formatted text
+ * @param {string} fileName
+ * @param {string} data
+ */
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, function (err) {
+    err ? console.error(err) : console.log('Success!');
+  });
+}
 
-// TODO: Create a function to initialize app
+/**
+ * Function to get user input from command line prompts using the inquirer package.
+ */
 function init() {
   inquirer
     .prompt([
@@ -77,13 +87,10 @@ function init() {
       },
     ])
     .then(function (response) {
-      console.log(generateMarkdown(response));
-      fs.writeFile(
+      let mdString = generateMarkdown(response);
+      writeToFile(
         `${response.projTitle.split(' ').join('')}-README.md`,
-        generateMarkdown(response),
-        function (err) {
-          err ? console.error(err) : console.log('Success!');
-        }
+        mdString
       );
     });
 }

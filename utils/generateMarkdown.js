@@ -1,5 +1,8 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+/**
+ * if no license was selected this returns an empty string.  Otherwise, it pulls a formatted string for the correct license out of the licenseBadgeObj object.
+ * @param {string} license
+ * @returns
+ */
 function renderLicenseBadge(license) {
   if (license === 'none') {
     return '';
@@ -14,8 +17,11 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+/**
+ * if no license was selected this returns an empty string.  Otherwise, it pulls a formatted string for the correct license out of the licenseLinkObj object.
+ * @param {string} license
+ * @returns
+ */
 function renderLicenseLink(license) {
   if (license === 'none') {
     return '';
@@ -30,8 +36,11 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+/**
+ * if no license was selected this returns an empty string.  Otherwise, it builds a formatted string for the correct license by calling the previous two functions, and using their result in a string template.
+ * @param {string} license
+ * @returns string
+ */
 function renderLicenseSection(license) {
   if (license === 'none') {
     return '';
@@ -48,14 +57,22 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+/**
+ * Create a function to generate markdown for README
+ * @param {Object} data
+ * @returns string
+ */
 function generateMarkdown(data) {
   const licenseSection = renderLicenseSection(data.projLicense);
+  // initializes the License section of the Table of Contents to an empty string
   let tocLicense = '';
+  // adds text to the License section of the ToC if a license was selected during user prompts
   if (data.projLicense !== 'none') {
     tocLicense = `
   - [License](#license)`;
   }
+
+  // returns formatted text string for use in markdown file.
   return `
   # ${data.projTitle}
 
@@ -100,4 +117,5 @@ function generateMarkdown(data) {
   For additional questions about this project, please reach out to me at <${data.email}>`;
 }
 
+// exports the generateMarkdown function for use in other js files
 module.exports = generateMarkdown;
