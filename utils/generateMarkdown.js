@@ -37,6 +37,20 @@ function renderLicenseLink(license) {
 }
 
 /**
+ * Builds the Table of Contents link for the License, if a license was selected.
+ * @param {string} license
+ * @returns string
+ */
+function renderLicenseTableOfContents(license) {
+  if (license === 'none') {
+    return '';
+  } else {
+    return `
+  - [License](#license)`;
+  }
+}
+
+/**
  * if no license was selected this returns an empty string.  Otherwise, it builds a formatted string for the correct license by calling the previous two functions, and using their result in a string template.
  * @param {string} license
  * @returns string
@@ -45,14 +59,12 @@ function renderLicenseSection(license) {
   if (license === 'none') {
     return '';
   } else {
-    const licenseBadge = renderLicenseBadge(license);
     const licenseLink = renderLicenseLink(license);
     return `
 ---
   ## License
 
   This project is licensed under a [${license}](${licenseLink}).
-  ${licenseBadge}
 `;
   }
 }
@@ -63,18 +75,13 @@ function renderLicenseSection(license) {
  * @returns string
  */
 function generateMarkdown(data) {
-  const licenseSection = renderLicenseSection(data.projLicense);
-  // initializes the License section of the Table of Contents to an empty string
-  let tocLicense = '';
-  // adds text to the License section of the ToC if a license was selected during user prompts
-  if (data.projLicense !== 'none') {
-    tocLicense = `
-  - [License](#license)`;
-  }
+  // const licenseSection = renderLicenseSection(data.projLicense);
 
   // returns formatted text string for use in markdown file.
   return `
   # ${data.projTitle}
+
+${renderLicenseBadge(data.projLicense)}
 
   ## Description
 
@@ -86,7 +93,7 @@ function generateMarkdown(data) {
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributing](#contributing)
-  - [Tests](#tests)${tocLicense}
+  - [Tests](#tests)${renderLicenseTableOfContents(data.projLicense)}
   - [Questions](#questions)
 
 ---
@@ -108,13 +115,15 @@ function generateMarkdown(data) {
   ## Tests
 
   ${data.projTest}
-  ${licenseSection}
+  ${renderLicenseSection(data.projLicense)}
 ---
   ## Questions
 
-  Check out my [GitHub profile](${data.githubProfile}).
+  Check out my [GitHub profile](https://github.com/${data.githubProfile}).
 
-  For additional questions about this project, please reach out to me at <${data.email}>`;
+  For additional questions about this project, please reach out to me at <${
+    data.email
+  }>`;
 }
 
 // exports the generateMarkdown function for use in other js files

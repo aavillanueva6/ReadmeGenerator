@@ -12,7 +12,7 @@ const questions = [
   'How should other developers contribute to this project?',
   'Please provide test instructions for the project.',
   'Which license would you like to use for this project?',
-  'Please provide your github profile url.',
+  'Please provide your github username.',
   'If you would like other developers to reach out to you, please enter your email address.',
 ];
 
@@ -22,7 +22,7 @@ const questions = [
  * @param {string} data
  */
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, function (err) {
+  fs.writeFile(`./output/${fileName}`, data, function (err) {
     err ? console.error(err) : console.log('Success!');
   });
 }
