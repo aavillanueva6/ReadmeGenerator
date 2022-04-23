@@ -1,8 +1,12 @@
 # Readme Generator in node
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Description
 
-The purpose of this project was to build an application for a user to be prompted with questions about their project, so that the application could generate a professional readme file for the project.
+The purpose of this project was to build an application for a user to be prompted with questions about their project, so that the application could generate a professional readme file for the user.
+
+This application runs in node.js.
 
 ---
 
@@ -29,22 +33,16 @@ Run index.js from node and follow the prompts.
 
 ---
 
-## Contributing
+## Screenshots
 
-none
-
----
-
-## Tests
-
-none
+A screenshot of the application functionality is presented below. The screenshot shows the prompts answered with placeholder text and the MIT License selected. It also shows the generated README from the user input:
+![screenshot of the application](./assets/images/demoScreenshot.png)
 
 ---
 
 ## License
 
 This project is licensed under a [MIT License](https://opensource.org/licenses/MIT).
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
