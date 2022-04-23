@@ -41,6 +41,8 @@ A screenshot of the application functionality is presented below. The screenshot
 A demo of the application functionality is at the following link:
 <https://www.youtube.com/watch?v=BlkZacjU_zU>
 
+Samples of generated readme files using this application are located in the output folder as "MyDemoProject(withlicense)-README.md" and "MyDemoProject(withoutlicense)-README.md".
+
 ---
 
 ## License
