@@ -33,10 +33,13 @@ Run index.js from node and follow the prompts.
 
 ---
 
-## Screenshots
+## Screenshots / Demo
 
 A screenshot of the application functionality is presented below. The screenshot shows the prompts answered with placeholder text and the MIT License selected. It also shows the generated README from the user input:
 ![screenshot of the application](./assets/images/demoScreenshot.png)
+
+A demo of the application functionality is at the following link:
+<https://www.youtube.com/watch?v=BlkZacjU_zU>
 
 ---
 
